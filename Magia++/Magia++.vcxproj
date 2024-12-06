@@ -134,6 +134,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp" />
+    <ClCompile Include="Listas\Lista.cpp" />
+    <ClCompile Include="Listas\ListaEntidades.cpp" />
     <ClCompile Include="Magia++.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +153,8 @@
     <ClInclude Include="Entidades\Plataforma.hpp" />
     <ClInclude Include="Entidades\Slime.hpp" />
     <ClInclude Include="Gerenciadores\Gerenciador_Grafico.hpp" />
+    <ClInclude Include="Listas\Lista.hpp" />
+    <ClInclude Include="Listas\ListaEntidades.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
