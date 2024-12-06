@@ -133,7 +133,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp" />
     <ClCompile Include="Magia++.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Entidades\Cavaleiro das Trevas.hpp" />
+    <ClInclude Include="Entidades\Ente.hpp" />
+    <ClInclude Include="Entidades\Entidade.hpp" />
+    <ClInclude Include="Entidades\Espinhos.hpp" />
+    <ClInclude Include="Entidades\Fogo_Magico.hpp" />
+    <ClInclude Include="Entidades\Inimigo.hpp" />
+    <ClInclude Include="Entidades\Jogador.hpp" />
+    <ClInclude Include="Entidades\Magico.hpp" />
+    <ClInclude Include="Entidades\Mini_Orc.hpp" />
+    <ClInclude Include="Entidades\Obstaculo.hpp" />
+    <ClInclude Include="Entidades\Personagem.hpp" />
+    <ClInclude Include="Entidades\Plataforma.hpp" />
+    <ClInclude Include="Entidades\Slime.hpp" />
+    <ClInclude Include="Gerenciadores\Gerenciador_Grafico.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
