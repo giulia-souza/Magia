@@ -7,7 +7,28 @@
 
 int main()
 {
-    Gerenciadores::Gerenciador_Grafico gg;
+    Listas::Lista<char> lista;
+
+	char teste = 'a';
+    char teste2 = 'b';
+    char teste3 = 'c';
+
+    lista.pushElemento(teste);
+    lista.pushElemento(teste2);
+    lista.pushElemento(teste3);
+
+
+    lista.pop(1);
+	printf("removi\n");
+    lista.pop(0);
+    printf("removi\n");
+    lista.pop(0);
+    printf("removi\n");
+    
+
+
+    return 0;
+    /*Gerenciadores::Gerenciador_Grafico gg;
 
         sf::CircleShape shape(100.f);
         shape.setFillColor(sf::Color::Magenta);
@@ -24,20 +45,7 @@ int main()
             gg.limpar();
             gg.getJanela()->draw(shape);
             gg.mostrar();
-        }
+        }*/
 
        return 0;  
 }
-
-/*
-    Listas::Lista<char> lista;
-
-        char teste[2] = "g";
-        char teste2[2] = "a";
-
-        lista.pushElemento(teste);
-        lista.pushElemento(teste2);
-
-
-        return 0;
- */

@@ -1,16 +1,21 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-//dar include no gerenc grafico
+#include "../Gerenciadores/Gerenciador_Grafico.hpp"
 
 class Ente{
 protected:
 	const int id;
-	//ponteiro para o gerenciador gráfico
-	//ponteiro pra figura
+	//static Gerenciadores::Gerenciador_Grafico* pGG;
+	sf::RectangleShape* forma;
+	sf::Vector2f pos;
 public:
 	Ente();
 	virtual ~Ente();
+	void setId(int ide);
+	int getId();
+	void setPosicao(const sf::Vector2f posicao);
+	sf::Vector2f getPos();
 	virtual void executar() = 0;
-	virtual void desenhar() = 0;
+	//virtual void desenhar();
 };

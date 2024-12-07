@@ -133,8 +133,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ente.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp" />
-    <ClCompile Include="Listas\Lista.cpp" />
     <ClCompile Include="Listas\ListaEntidades.cpp" />
     <ClCompile Include="Magia++.cpp" />
   </ItemGroup>

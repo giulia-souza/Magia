@@ -14,21 +14,18 @@ namespace Listas
 		private:
 			Elemento<TE>* prox;
 			Elemento<TE>* ant;
-			TE* info;
+			TE data;
 
 		public:
-			Elemento()
+			Elemento():
+				prox(NULL), ant(NULL), data(TE())
 			{
-				prox = NULL;
-				ant = NULL;
-				info = NULL;
 			}
 			~Elemento()
 			{
 				prox = NULL;
 				ant = NULL;
-				delete info;
-				info = NULL;
+				data = NULL;
 			}
 
 			void setProx(Elemento<TE>* novoProx)
@@ -42,20 +39,20 @@ namespace Listas
 
 			void setAnt(Elemento<TE>* novoAnt)
 			{
-				ant = novoAnt;
+					ant = novoAnt;
 			}
 			Elemento<TE>* getAnt() const
 			{
 				return ant;
 			}
 
-			void setInfo(TE* novaInfo)
+			void setData(TE novoData)
 			{
-				info = novaInfo;
+				data = novoData;
 			}
-			TE* getInfo() const
+			TE getData() const
 			{
-				return info;
+				return data;
 			}
 		};
 
@@ -63,15 +60,15 @@ namespace Listas
 		Elemento<TL>* cabeca;
 		Elemento<TL>* cauda;
 
-		unsigned int tam;
+		int tam;
 
 	public:
 		Lista();
 		~Lista();
 		Elemento<TL>* getCabeca() const;
 		TL* operator[](int index);
-		void pushElemento(TL* newInfo);
-		TL* pop(int index);
+		void pushElemento(TL newInfo);
+		void pop(int index);
 		void limpar();
 		const unsigned int getTam() const;
 	};
@@ -87,7 +84,13 @@ namespace Listas
 	template <class TL>
 	Lista<TL> :: ~Lista()
 	{
-		limpar();
+		Elemento<TL>* atual = cabeca;
+
+		while (atual != nullptr) {
+			Elemento<TL>* cabeca = atual->getProx();
+			delete atual;
+			atual = cabeca;
+		}
 	}
 
 	template <class TL>
@@ -117,16 +120,16 @@ namespace Listas
 
 	//Adicionar elementos na lista
 	template <class TL>
-	void Lista<TL> :: pushElemento(TL* newInfo)
+	void Lista<TL> :: pushElemento(TL newInfo)
 	{
 		if (newInfo == NULL)
 		{
-			std::cout << "Tentando adicionar ponteiro nulo na lista" << std::endl;
+			std::cout << "Tentando adicionar nulo na lista" << std::endl;
 			exit(1);
 		}
 
 		Elemento<TL>* elemento = new Elemento<TL>();
-		elemento->setInfo(newInfo);
+		elemento->setData(newInfo);
 
 		if (cabeca == NULL)//lista vazia
 		{
@@ -149,7 +152,7 @@ namespace Listas
 
 	//Remove elementos da lista com um certo indice
 	template <class TL>
-	TL* Lista<TL> :: pop(int index)
+	void Lista<TL> :: pop(int index)
 	{
 		if (index >= tam || index < 0)//verificando se o indice está nos limites da lista
 		{
@@ -168,37 +171,12 @@ namespace Listas
 		else if (pAux == cauda)//se pAux for cauda
 			pAux->getAnt()->setProx(NULL);
 
-		else
+		else {
 			pAux->getAnt()->setProx(pAux->getProx());
-		pAux->getProx()->setAnt(pAux->getAnt());
-
-		TL* pAux2 = pAux->getInfo();
-		delete pAux;
-		return pAux2;
-	}
-
-
-	//Remove todos os Elementos da lista
-	template <class TL>
-	void Lista<TL> :: limpar()
-	{
-
-		if (cabeca != NULL)
-		{
-			Elemento <TL>* pAux;
-			pAux = cabeca->getProx();
-
-			while (pAux != NULL)//Enqt pAux for diferente de nulo..
-			{
-				cabeca->setProx(pAux->getProx());
-				delete pAux;
-				pAux = cabeca->getProx();
-			}
-			delete cabeca;
-			cabeca = NULL;
-			cauda = NULL;
-			tam = 0;
+			pAux->getProx()->setAnt(pAux->getAnt());
 		}
+
+		delete pAux;
 	}
 
 	template <class TL>

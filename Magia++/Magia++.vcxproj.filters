@@ -30,11 +30,11 @@
     <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Listas\Lista.cpp">
-      <Filter>Arquivos de Cabeçalho\Listas</Filter>
-    </ClCompile>
     <ClCompile Include="Listas\ListaEntidades.cpp">
       <Filter>Arquivos de Cabeçalho\Listas</Filter>
+    </ClCompile>
+    <ClCompile Include="Ente.cpp">
+      <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
