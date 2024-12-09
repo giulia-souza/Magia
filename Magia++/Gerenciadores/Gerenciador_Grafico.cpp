@@ -1,4 +1,5 @@
-#include "Gerenciador_Grafico.hpp"
+#include "../include/Gerenciador_Grafico.hpp"
+#include "../include/Ente.hpp"
 
 namespace Gerenciadores {
 
@@ -7,7 +8,7 @@ namespace Gerenciadores {
 	/* Construtora e Destrutora */
 
 	Gerenciador_Grafico::Gerenciador_Grafico():
-	janela(new sf::RenderWindow(sf::VideoMode(1820, 1000), "JOGO"))
+	janela(new sf::RenderWindow(sf::VideoMode(400, 400), "JOGO"))
 	{
 	}
 
@@ -36,6 +37,9 @@ namespace Gerenciadores {
 	sf::RenderWindow* Gerenciador_Grafico::getJanela() {
 		return janela;
 	}
+	void Gerenciador_Grafico::desenhar(sf::Sprite* s) {
+		janela->draw(*s);
+	}
 
 	bool Gerenciador_Grafico::janela_aberta() {
 		return janela->isOpen();
@@ -51,6 +55,10 @@ namespace Gerenciadores {
 
 	void Gerenciador_Grafico::fechar() {
 		janela->close();
+	}
+
+	void Gerenciador_Grafico::desenharEnte(Ente* e) {
+		//...tenho q fzr ainda...
 	}
 
 }

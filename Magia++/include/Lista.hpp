@@ -12,38 +12,38 @@ namespace Listas
 		class Elemento
 		{
 		private:
-			Elemento<TE>* prox;
-			Elemento<TE>* ant;
+			Elemento<TE>* pProx;
+			Elemento<TE>* pAnt;
 			TE data;
 
 		public:
 			Elemento():
-				prox(NULL), ant(NULL), data(TE())
+				pProx(NULL), pAnt(NULL), data(TE())
 			{
 			}
 			~Elemento()
 			{
-				prox = NULL;
-				ant = NULL;
+				pProx = NULL;
+				pAnt = NULL;
 				data = NULL;
 			}
 
 			void setProx(Elemento<TE>* novoProx)
 			{
-				prox = novoProx;
+				pProx = novoProx;
 			}
 			Elemento<TE>* getProx() const
 			{
-				return prox;
+				return pProx;
 			}
 
 			void setAnt(Elemento<TE>* novoAnt)
 			{
-					ant = novoAnt;
+				pAnt = novoAnt;
 			}
 			Elemento<TE>* getAnt() const
 			{
-				return ant;
+				return pAnt;
 			}
 
 			void setData(TE novoData)
@@ -57,19 +57,19 @@ namespace Listas
 		};
 
 	private:
-		Elemento<TL>* cabeca;
-		Elemento<TL>* cauda;
+		Elemento<TL>* pPrimeiro;
+		Elemento<TL>* pUltimo;
 
 		int tam;
 
 	public:
 		Lista();
 		~Lista();
-		Elemento<TL>* getCabeca() const;
+		Elemento<TL>* getPrimeiro() const;
+		Elemento<TL>* getUltimo() const;
 		TL* operator[](int index);
 		void pushElemento(TL newInfo);
-		void pop(int index);
-		void limpar();
+		void popElemento(int index);
 		const unsigned int getTam() const;
 	};
 
@@ -77,26 +77,32 @@ namespace Listas
 	Lista<TL> :: Lista()
 	{
 		tam = 0;
-		cabeca = NULL;
-		cauda = NULL;
+		pPrimeiro = NULL;
+		pUltimo = NULL;
 	}
 
 	template <class TL>
 	Lista<TL> :: ~Lista()
 	{
-		Elemento<TL>* atual = cabeca;
+		Elemento<TL>* atual = pPrimeiro;
 
 		while (atual != nullptr) {
-			Elemento<TL>* cabeca = atual->getProx();
+			Elemento<TL>* pPrimeiro = atual->getProx();
 			delete atual;
-			atual = cabeca;
+			atual = pPrimeiro;
 		}
 	}
 
 	template <class TL>
-	Lista<TL> :: Elemento<TL>* Lista<TL> :: getCabeca() const
+	Lista<TL> :: Elemento<TL>* Lista<TL> :: getPrimeiro() const
 	{
-		return cabeca;
+		return pPrimeiro;
+	}
+
+	template <class TL>
+	Lista<TL>::Elemento<TL>* Lista<TL>::getUltimo() const
+	{
+		return pUltimo;
 	}
 
 
@@ -110,7 +116,7 @@ namespace Listas
 			exit(1);
 		}
 
-		Elemento<TL>* pAux = cabeca;
+		Elemento<TL>* pAux = pPrimeiro;
 		for (int i = 0; i < index; i++)
 			pAux = pAux->getProx();
 
@@ -131,10 +137,10 @@ namespace Listas
 		Elemento<TL>* elemento = new Elemento<TL>();
 		elemento->setData(newInfo);
 
-		if (cabeca == NULL)//lista vazia
+		if (pPrimeiro == NULL)//lista vazia
 		{
-			cabeca = elemento;
-			cauda = elemento;
+			pPrimeiro = elemento;
+			pUltimo = elemento;
 			tam++;
 			std::cout << "Adicionado" << std::endl;
 			return;
@@ -142,17 +148,17 @@ namespace Listas
 
 		//se nao for vazia, adiciona no final
 
-		elemento->setAnt(cauda);
+		elemento->setAnt(pUltimo);
 		elemento->setProx(NULL);
-		cauda->setProx(elemento);
-		cauda = elemento;
+		pUltimo->setProx(elemento);
+		pUltimo = elemento;
 		tam++;
 		std::cout << "Adicionado" << std::endl;
 	}
 
 	//Remove elementos da lista com um certo indice
 	template <class TL>
-	void Lista<TL> :: pop(int index)
+	void Lista<TL> :: popElemento(int index)
 	{
 		if (index >= tam || index < 0)//verificando se o indice está nos limites da lista
 		{
@@ -160,15 +166,15 @@ namespace Listas
 			exit(1);
 		}
 
-		Elemento<TL>* pAux = cabeca;
+		Elemento<TL>* pAux = pPrimeiro;
 
 		for (int i = 0; i < index; i++)//loop p chegar na pos
 			pAux = pAux->getProx();
 
-		if (pAux == cabeca)//se pAux for cabeça
-			cabeca = pAux->getProx();
+		if (pAux == pPrimeiro)//se pAux for cabeça
+			pPrimeiro = pAux->getProx();
 
-		else if (pAux == cauda)//se pAux for cauda
+		else if (pAux == pUltimo)//se pAux for cauda
 			pAux->getAnt()->setProx(NULL);
 
 		else {

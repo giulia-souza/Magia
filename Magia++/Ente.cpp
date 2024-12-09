@@ -1,25 +1,11 @@
-#include "Entidades/Ente.hpp"
+#include "include/Ente.hpp"
+#include "include/Gerenciador_Grafico.hpp"
 
+	Ente::Ente() : sprite(nullptr), id(0), pGG(nullptr) {}
+	Ente:: ~Ente() {
+	}
+	
+	void Ente:: desenhar() {
+		pGG->desenhar(sprite);
+	}
 
-	Ente::Ente(): id(0) {
-		forma = nullptr;
-		//pGG = nullptr;
-		pos = sf::Vector2f(0, 0);
-	}
-	 Ente:: ~Ente() {
-		delete forma;
-		forma = nullptr;
-		//pGG = nullptr;
-	}
-	int Ente::getId() {
-		return id;
-	}
-	void Ente:: setPosicao(const sf::Vector2f posicao) {
-		pos = posicao;
-	}
-	sf::Vector2f Ente::getPos() {
-		return pos;
-	}
-	//void Ente:: desenhar() {
-		//pGG->getJanela()->draw(*forma);
-	//}

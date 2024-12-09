@@ -134,27 +134,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ente.cpp" />
+    <ClCompile Include="Entidade.cpp" />
     <ClCompile Include="Gerenciadores\Gerenciador_Grafico.cpp" />
+    <ClCompile Include="Gerenciador_Comandos.cpp" />
     <ClCompile Include="Listas\ListaEntidades.cpp" />
-    <ClCompile Include="Magia++.cpp" />
+    <ClCompile Include="Magia++.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Projetos\Magia++\Magia++\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Entidades\Cavaleiro das Trevas.hpp" />
-    <ClInclude Include="Entidades\Ente.hpp" />
-    <ClInclude Include="Entidades\Entidade.hpp" />
-    <ClInclude Include="Entidades\Espinhos.hpp" />
-    <ClInclude Include="Entidades\Fogo_Magico.hpp" />
-    <ClInclude Include="Entidades\Inimigo.hpp" />
-    <ClInclude Include="Entidades\Jogador.hpp" />
-    <ClInclude Include="Entidades\Magico.hpp" />
-    <ClInclude Include="Entidades\Mini_Orc.hpp" />
-    <ClInclude Include="Entidades\Obstaculo.hpp" />
-    <ClInclude Include="Entidades\Personagem.hpp" />
-    <ClInclude Include="Entidades\Plataforma.hpp" />
-    <ClInclude Include="Entidades\Slime.hpp" />
-    <ClInclude Include="Gerenciadores\Gerenciador_Grafico.hpp" />
-    <ClInclude Include="Listas\Lista.hpp" />
-    <ClInclude Include="Listas\ListaEntidades.hpp" />
+    <ClInclude Include="include\Cavaleiro das Trevas.hpp" />
+    <ClInclude Include="include\Ente.hpp" />
+    <ClInclude Include="include\Entidade.hpp" />
+    <ClInclude Include="include\Espinhos.hpp" />
+    <ClInclude Include="include\Fogo_Magico.hpp" />
+    <ClInclude Include="include\Gerenciador_Comandos.hpp" />
+    <ClInclude Include="include\Gerenciador_Grafico.hpp" />
+    <ClInclude Include="include\Inimigo.hpp" />
+    <ClInclude Include="include\Jogador.hpp" />
+    <ClInclude Include="include\Lista.hpp" />
+    <ClInclude Include="include\ListaEntidades.hpp" />
+    <ClInclude Include="include\Magico.hpp" />
+    <ClInclude Include="include\Mini_Orc.hpp" />
+    <ClInclude Include="include\Obstaculo.hpp" />
+    <ClInclude Include="include\Personagem.hpp" />
+    <ClInclude Include="include\Plataforma.hpp" />
+    <ClInclude Include="include\Slime.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

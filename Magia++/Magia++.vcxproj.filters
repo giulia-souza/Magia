@@ -13,14 +13,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Arquivos de Cabeçalho\Entidades">
-      <UniqueIdentifier>{40c22bea-921a-447a-a1b3-dd6acbdf1a34}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Arquivos de Cabeçalho\Gerenciadores">
       <UniqueIdentifier>{60d593a5-32cb-4b6e-900e-4db8aa782a68}</UniqueIdentifier>
     </Filter>
     <Filter Include="Arquivos de Cabeçalho\Listas">
       <UniqueIdentifier>{de4147b4-ad4c-4df4-8837-85c46fb01537}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho\Entidades">
+      <UniqueIdentifier>{c75be4f3-eb97-43a0-84bc-a2bb3edac8d6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -36,55 +36,64 @@
     <ClCompile Include="Ente.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Gerenciador_Comandos.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Entidade.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Entidades\Cavaleiro das Trevas.hpp">
+    <ClInclude Include="include\Cavaleiro das Trevas.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Ente.hpp">
+    <ClInclude Include="include\Ente.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Entidade.hpp">
+    <ClInclude Include="include\Entidade.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Espinhos.hpp">
+    <ClInclude Include="include\Espinhos.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Fogo_Magico.hpp">
+    <ClInclude Include="include\Fogo_Magico.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Inimigo.hpp">
+    <ClInclude Include="include\Inimigo.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Jogador.hpp">
+    <ClInclude Include="include\Jogador.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Magico.hpp">
+    <ClInclude Include="include\Magico.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Mini_Orc.hpp">
+    <ClInclude Include="include\Mini_Orc.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Obstaculo.hpp">
+    <ClInclude Include="include\Obstaculo.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Personagem.hpp">
+    <ClInclude Include="include\Personagem.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Plataforma.hpp">
+    <ClInclude Include="include\Plataforma.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Entidades\Slime.hpp">
+    <ClInclude Include="include\Slime.hpp">
       <Filter>Arquivos de Cabeçalho\Entidades</Filter>
     </ClInclude>
-    <ClInclude Include="Gerenciadores\Gerenciador_Grafico.hpp">
+    <ClInclude Include="include\Gerenciador_Grafico.hpp">
       <Filter>Arquivos de Cabeçalho\Gerenciadores</Filter>
     </ClInclude>
-    <ClInclude Include="Listas\Lista.hpp">
+    <ClInclude Include="include\Lista.hpp">
       <Filter>Arquivos de Cabeçalho\Listas</Filter>
     </ClInclude>
-    <ClInclude Include="Listas\ListaEntidades.hpp">
+    <ClInclude Include="include\ListaEntidades.hpp">
       <Filter>Arquivos de Cabeçalho\Listas</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Gerenciador_Comandos.hpp">
+      <Filter>Arquivos de Cabeçalho\Gerenciadores</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
