@@ -12,10 +12,10 @@ protected:
 	Gerenciadores::Gerenciador_Grafico* pGG;
 	sf::Sprite* sprite;
 public:
-	Ente();
-	virtual ~Ente();
-	int getId() { return id; }
-	void atualizaSprite();
+	Ente();//feita
+	virtual ~Ente();//feita
+	int getId() { return id; }//feita
+	//void atualizaSprite();
 	virtual void executar() = 0;
-	void desenhar();
+	void desenhar();//feita
 };
